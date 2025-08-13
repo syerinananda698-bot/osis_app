@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Dashboard</h2>
+<div class="row g-3">
+  <div class="col-md-4">
+    <div class="card p-3">
+      <h5>Total Anggota</h5>
+      <p class="display-6">{{ total_anggota }}</p>
+      <a href="{{ url_for('anggota_list') }}" class="btn btn-outline-primary btn-sm">Kelola</a>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card p-3">
+      <h5>Total Kegiatan</h5>
+      <p class="display-6">{{ total_kegiatan }}</p>
+      <a href="{{ url_for('kegiatan_list') }}" class="btn btn-outline-primary btn-sm">Kelola</a>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card p-3">
+      <h5>Total Surat</h5>
+      <p class="display-6">{{ total_surat }}</p>
+      <a href="{{ url_for('surat_list') }}" class="btn btn-outline-primary btn-sm">Kelola</a>
+    </div>
+  </div>
+</div>
+{% endblock %}

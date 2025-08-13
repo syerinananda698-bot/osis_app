@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Hasil Pencarian untuk: "{{ q }}"</h3>
+
+<h5>Anggota</h5>
+{% if anggota %}<ul>{% for a in anggota %}<li>{{ a.nama }} ({{ a.kelas }})</li>{% endfor %}</ul>{% else %}<div class="text-muted">Tidak ada</div>{% endif %}
+
+<h5>Kegiatan</h5>
+{% if kegiatan %}<ul>{% for k in kegiatan %}<li>{{ k.nama_kegiatan }} - {{ k.tanggal }}</li>{% endfor %}</ul>{% else %}<div class="text-muted">Tidak ada</div>{% endif %}
+
+<h5>Surat</h5>
+{% if surat %}<ul>{% for s in surat %}<li>{{ s.nomor_surat }} - {{ s.perihal }}</li>{% endfor %}</ul>{% else %}<div class="text-muted">Tidak ada</div>{% endif %}
+
+<form class="mt-3" action="{{ url_for('search') }}" method="get">
+  <div class="input-group">
+    <input name="q" class="form-control" placeholder="Cari..." value="{{ q }}">
+    <button class="btn btn-primary">Cari</button>
+  </div>
+</form>
+{% endblock %}

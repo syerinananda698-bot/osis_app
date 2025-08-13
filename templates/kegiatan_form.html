@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>{{ 'Edit' if item else 'Tambah' }} Kegiatan</h3>
+<form method="post">
+  <div class="row g-3">
+    <div class="col-md-6"><label class="form-label">Nama Kegiatan</label><input name="nama_kegiatan" class="form-control" required value="{{ item.nama_kegiatan if item else '' }}"></div>
+    <div class="col-md-3"><label class="form-label">Tanggal</label><input name="tanggal" class="form-control" placeholder="YYYY-MM-DD" value="{{ item.tanggal if item else '' }}"></div>
+    <div class="col-md-3"><label class="form-label">Keterangan</label><input name="keterangan" class="form-control" value="{{ item.keterangan if item else '' }}"></div>
+  </div>
+  <div class="mt-3"><button class="btn btn-primary">Simpan</button> <a class="btn btn-secondary" href="{{ url_for('kegiatan_list') }}">Batal</a></div>
+</form>
+{% endblock %}

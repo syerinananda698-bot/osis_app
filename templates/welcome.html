@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="text-center py-5">
+  <h1>Selamat Datang di Sistem Informasi OSIS</h1>
+  <p class="lead">Kelola anggota, kegiatan, dan surat OSIS dengan mudah.</p>
+  <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg">Login</a>
+</div>
+{% endblock %}

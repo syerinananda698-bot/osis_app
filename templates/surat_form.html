@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>{{ 'Edit' if item else 'Tambah' }} Surat</h3>
+<form method="post">
+  <div class="row g-3">
+    <div class="col-md-4"><label class="form-label">Nomor Surat</label><input name="nomor_surat" class="form-control" required value="{{ item.nomor_surat if item else '' }}"></div>
+    <div class="col-md-4"><label class="form-label">Perihal</label><input name="perihal" class="form-control" required value="{{ item.perihal if item else '' }}"></div>
+    <div class="col-md-4"><label class="form-label">Tanggal</label><input name="tanggal" class="form-control" placeholder="YYYY-MM-DD" value="{{ item.tanggal if item else '' }}"></div>
+  </div>
+  <div class="mt-3"><button class="btn btn-primary">Simpan</button> <a class="btn btn-secondary" href="{{ url_for('surat_list') }}">Batal</a></div>
+</form>
+{% endblock %}
